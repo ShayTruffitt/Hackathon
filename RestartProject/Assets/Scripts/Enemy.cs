@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private EnemySpawner enemySpawner;
 
+    //public int Health;
     public Transform player;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
@@ -37,4 +39,17 @@ public class Enemy : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
+
+    public void TakeDamage()
+    {
+        Destroy(gameObject);
+        enemySpawner = FindObjectOfType<EnemySpawner>();
+        enemySpawner.enemiesInRoom--;
+
+        if(enemySpawner.spawnTime <=0 &&enemySpawner.enemiesInRoom <= 0)
+        {
+            enemySpawner.spawnerDone = true;
+        }
+        
+    }
 }
