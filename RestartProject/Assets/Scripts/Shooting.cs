@@ -27,5 +27,6 @@ public class Shooting : MonoBehaviour
         Destroy(bullet, 2f);
     }
 
+
 }
 
