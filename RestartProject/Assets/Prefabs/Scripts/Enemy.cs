@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private EnemySpawner enemySpawner;
 
     //public int Health;
-    public Transform player;
+    public Transform playerToFollow;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     Vector2 movement;
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = playerToFollow.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg -90f;
         direction.Normalize();
         movement = direction;
@@ -50,6 +50,39 @@ public class Enemy : MonoBehaviour
         {
             enemySpawner.spawnerDone = true;
         }
-        
+
+
+
     }
+
+    public GameObject Ship;
+    public GameObject damageAnimation;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("hit Detected");
+        //Destroy(Ship);
+        GameObject e = Instantiate(damageAnimation) as GameObject;
+    }
+
+    void OnCollisionEnter(Collision c)
+    {
+
+        // If the object we hit is the enemy
+        if (c.gameObject.tag == "Enemy")
+        {
+            // Calculate Angle Between the collision point and the player
+            Vector3 dir = c.contacts[0].point - transform.position;
+            // We then get the opposite (-Vector3) and normalize it
+            dir = -dir.normalized;
+            // And finally we add force in the direction of dir and multiply it by force. 
+            // This will push back the player
+            GetComponent<Rigidbody>().AddForce(dir * moveSpeed);
+        }
+    }
+
+
+
+
 }
