@@ -38,6 +38,28 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-5477934701058324795
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Boss2Engage
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 08cf9ec09fed41146be831d17b2d89e7
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!245 &-5232355178056500733
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Boss3Engage
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 55844de6eeb664c4ea6aff0996032764
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
 --- !u!243 &-1451909306384133538
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -82,6 +104,13 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 944520383006215739}
+  - {fileID: -5477934701058324795}
+  - {fileID: -5232355178056500733}
+  - {fileID: 7924971299286018525}
+  - {fileID: 882541094729457815}
+  - {fileID: 2823917637707734191}
+  - {fileID: 3061132188047517835}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -96,7 +125,7 @@ AudioMixerController:
     - 9f568ec0591c52247bd149527149f4cc
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -5477934701058324795}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -164,6 +193,28 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &882541094729457815
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level1Ambience
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: cb682e843da6d7c47b684ab52da61290
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!245 &944520383006215739
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Boss1Engage
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 4b620558be088264b8add6e9a41885e0
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
 --- !u!244 &2597506924467131017
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -178,6 +229,17 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &2823917637707734191
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level2Ambience
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 48fc4dd67b73c6c46833d1ab98916c63
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
 --- !u!244 &2936698961848649550
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -192,6 +254,17 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &3061132188047517835
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level3Ambience
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 54220c04a665d6745aac13baa43ce53f
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
 --- !u!244 &7263728525872919321
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -206,3 +279,14 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &7924971299286018525
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Boss4Engage
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: f4ba4aa7dea66bf4f94e8ae6b40a1a01
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
