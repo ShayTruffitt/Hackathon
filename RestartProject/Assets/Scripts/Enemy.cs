@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
 
-    //public int Health;
+    public int Health;
     public Transform playerToFollow;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //allows us to manipulate the object 
-        rb = this.GetComponent<Rigidbody2D>(); 
+        rb = this.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -26,6 +27,13 @@ public class Enemy : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg -90f;
         direction.Normalize();
         movement = direction;
+
+        if (Vector3.Distance(transform.position, playerToFollow.position) > 1f)
+        {
+            MoveTowards(playerToFollow.position);
+            RotateTowards(playerToFollow.position);
+        }
+
 
     }
 
@@ -40,15 +48,23 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        Destroy(gameObject);
+
+        
         enemySpawner = FindObjectOfType<EnemySpawner>();
         enemySpawner.enemiesInRoom--;
+        
 
         if(enemySpawner.spawnTime <=0 &&enemySpawner.enemiesInRoom <= 0)
         {
             enemySpawner.spawnerDone = true;
+        }
+
+        Health -= damage;
+        if (Health <= 0)
+        {
+            Destroy(Ship);
         }
 
 
@@ -82,7 +98,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void MoveTowards(Vector2 target)
+    {
+        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+    }
 
-
+    private void RotateTowards(Vector2 target)
+    {
+        var offset = 180f;
+        Vector2 direction = target - (Vector2)transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+    }
 
 }
