@@ -127,6 +127,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 867462575}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &229651842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229651836}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: -0.073646754}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0894146, y: 0.4108252}
+  m_EdgeRadius: 0
 --- !u!1 &612204242
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,8 +254,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8159788456984271836, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
+      propertyPath: m_Size.x
+      value: 1.1005926
+      objectReference: {fileID: 0}
+    - target: {fileID: -8159788456984271836, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
       propertyPath: m_Size.y
       value: 0.4363246
+      objectReference: {fileID: 0}
+    - target: {fileID: -8159788456984271836, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.016765565
       objectReference: {fileID: 0}
     - target: {fileID: -8159788456984271836, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
@@ -246,6 +282,26 @@ PrefabInstance:
       propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919168, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919168, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919168, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919169, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4580444781716919170, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
       propertyPath: m_Name
@@ -258,6 +314,11 @@ PrefabInstance:
       objectReference: {fileID: 229651836}
     - target: {fileID: 4580444781716919171, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919171, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
       propertyPath: playerToFollow
       value: 
       objectReference: {fileID: 2074001075}
@@ -268,13 +329,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580444781716919198, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.91058433
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580444781716919198, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.8
+      value: 24.04
       objectReference: {fileID: 0}
     - target: {fileID: 4580444781716919198, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 19.78
       objectReference: {fileID: 0}
     - target: {fileID: 4580444781716919198, guid: 6a9c0ec56c5d6d84cb34c66aebf205a8,
         type: 3}
@@ -352,7 +418,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 229651836}
   minTimeBetweenSpawns: 1
-  maxTimeBetweenSpawns: 3
+  maxTimeBetweenSpawns: 2
   canSpawn: 1
   spawnTime: 15
   enemiesInRoom: 0

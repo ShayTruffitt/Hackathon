@@ -5,13 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
-
-    //public int Health;
+    public int health = 100;
     public Transform playerToFollow;
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     Vector2 movement;
-     
+    public GameObject Ship;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg -90f;
         direction.Normalize();
         movement = direction;
-
+        RotateTowards(playerToFollow.position);
     }
 
     private void FixedUpdate()
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    /*public void TakeDamage()
     {
         Destroy(gameObject);
         enemySpawner = FindObjectOfType<EnemySpawner>();
@@ -50,28 +50,42 @@ public class Enemy : MonoBehaviour
         {
             enemySpawner.spawnerDone = true;
         }
-
-
-
     }
+    */
 
-    public GameObject Ship;
-    public GameObject damageAnimation;
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
 
+         Destroy(Ship);
+        }
+    }
+    
+    
 
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hit Detected");
-        //Destroy(Ship);
-        GameObject e = Instantiate(damageAnimation) as GameObject;
-    }
 
+        if (health <= 0)
+        {
+            Destroy(Ship);
+       }
+        
+    }
+    */
+    /*
     void OnCollisionEnter(Collision c)
     {
 
         // If the object we hit is the enemy
-        if (c.gameObject.tag == "Enemy")
+        if (c.gameObject.tag == "PlayerBullet")
         {
+
+            Debug.Log("hit Detected");
             // Calculate Angle Between the collision point and the player
             Vector3 dir = c.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it
@@ -81,8 +95,13 @@ public class Enemy : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(dir * moveSpeed);
         }
     }
-
-
-
-
+    */
+    private void RotateTowards(Vector2 target)
+    {
+        var offset = 180f;
+        Vector2 direction = target - (Vector2)transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+    }
 }
