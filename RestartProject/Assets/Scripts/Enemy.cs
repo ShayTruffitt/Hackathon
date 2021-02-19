@@ -65,6 +65,9 @@ public class Enemy : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(Ship);
+            GameObject e = Instantiate(damageAnimation) as GameObject;
+            e.transform.position = transform.position;
+            Destroy(this.gameObject);
         }
 
 
@@ -79,7 +82,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("hit Detected");
         //Destroy(Ship);
-        GameObject e = Instantiate(damageAnimation) as GameObject;
+        
     }
 
     void OnCollisionEnter(Collision c)
