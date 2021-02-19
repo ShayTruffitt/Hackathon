@@ -11,13 +11,17 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 5f;
     Vector2 movement;
-     
+    public GameObject enemyShip;
+    public GameObject damageAnimation;
+    public int points;
+
+
     // Start is called before the first frame update
     void Start()
     {
         //allows us to manipulate the object 
         rb = this.GetComponent<Rigidbody2D>();
-
+        
     }
 
     // Update is called once per frame
@@ -34,6 +38,8 @@ public class Enemy : MonoBehaviour
             RotateTowards(playerToFollow.position);
         }
 
+        enemySpawner = FindObjectOfType<EnemySpawner>();
+        enemySpawner.enemiesInRoom--;
 
     }
 
@@ -51,11 +57,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-        
-        enemySpawner = FindObjectOfType<EnemySpawner>();
-        enemySpawner.enemiesInRoom--;
-        
-
         if(enemySpawner.spawnTime <=0 &&enemySpawner.enemiesInRoom <= 0)
         {
             enemySpawner.spawnerDone = true;
@@ -64,26 +65,19 @@ public class Enemy : MonoBehaviour
         Health -= damage;
         if (Health <= 0)
         {
+
             Destroy(Ship);
             GameObject e = Instantiate(damageAnimation) as GameObject;
             e.transform.position = transform.position;
             Destroy(this.gameObject);
+
         }
 
-
-
     }
 
-    public GameObject Ship;
-    public GameObject damageAnimation;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("hit Detected");
-        //Destroy(Ship);
-        
-    }
+
 
     void OnCollisionEnter(Collision c)
     {
