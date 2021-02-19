@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject ThisBullet;
@@ -10,11 +10,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        Player player = other.GetComponent<Player>();
+        if (player != null)
         {
             //take damage requires an Int to be placed
-            enemy.TakeDamage(damage);
+            player.TakeDamage(damage);
             Destroy(ThisBullet);
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
