@@ -65,12 +65,12 @@ public class Enemy : MonoBehaviour
         Health -= damage;
         if (Health <= 0)
         {
-            Destroy(enemyShip);
-            Debug.Log("Enemy has been hit");
-            //Destroy(Ship);
+
+            Destroy(Ship);
             GameObject e = Instantiate(damageAnimation) as GameObject;
             e.transform.position = transform.position;
-            
+            Destroy(this.gameObject);
+
         }
 
     }
@@ -78,7 +78,6 @@ public class Enemy : MonoBehaviour
 
 
 
- //   private void OnTriggerEnter2D(Collider2D collision){ }
 
     void OnCollisionEnter(Collision c)
     {

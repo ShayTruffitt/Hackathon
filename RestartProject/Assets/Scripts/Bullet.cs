@@ -20,14 +20,13 @@ public class Bullet : MonoBehaviour
             e.transform.position = transform.position;
         }
 
-        /*
+        
         if(other.tag== "Enemy")
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
-        */
+        
     }
 }
