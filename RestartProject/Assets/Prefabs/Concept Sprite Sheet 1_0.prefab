@@ -146,10 +146,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7953331980677774099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f5e7ba481bc28c45b73c20dd7ed5290, type: 3}
+  m_Script: {fileID: 11500000, guid: a78aad7b414ceed46a3148bdccaad6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 5
   rb: {fileID: 7953331980677774097}
   cam: {fileID: 0}
 --- !u!114 &7953331980677774108
