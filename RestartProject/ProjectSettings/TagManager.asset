@@ -54,3 +54,6 @@ TagManager:
   - name: Character
     uniqueID: 3122148111
     locked: 0
+  - name: ScreenEffects
+    uniqueID: 2499877629
+    locked: 0
