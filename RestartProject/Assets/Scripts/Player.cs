@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public GameObject playerShip;
     public GameObject deathAnimation;
 
+    private void Start()
+    {
+        GameManager.instance.playerAlive = true;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -20,7 +24,7 @@ public class Player : MonoBehaviour
             //Destroy(Ship);
             GameObject e = Instantiate(deathAnimation) as GameObject;
             e.transform.position = transform.position;
-
+            GameManager.instance.playerAlive = false;
         }
 
     }
