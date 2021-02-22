@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6478334168834478751}
   - component: {fileID: 2236725463554436177}
   - component: {fileID: 4570149590870139086}
-  - component: {fileID: 1909357074460973086}
-  - component: {fileID: 4970058751704455027}
+  - component: {fileID: 2636366795345488833}
+  - component: {fileID: 6719313903621439964}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1172819185
   m_SortingLayer: 4
   m_SortingOrder: -1
-  m_Sprite: {fileID: -7779215486825634471, guid: 3124ccb9a1e52bc4fa49a75d0ffa3581,
-    type: 3}
+  m_Sprite: {fileID: 874343242196921964, guid: 3124ccb9a1e52bc4fa49a75d0ffa3581, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +122,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
---- !u!114 &1909357074460973086
+--- !u!114 &2636366795345488833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,14 +131,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 39817594335813590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8c91dda03b93845972a4f0b870d651, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce30408464acda43a979fa4ba0142fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 8218569054247334335, guid: f276bcf5b1afecf44abf085f1dc2f8c4,
-    type: 3}
+  explosion: {fileID: 0}
   ThisBullet: {fileID: 39817594335813590}
   damage: 20
---- !u!82 &4970058751704455027
+--- !u!82 &6719313903621439964
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +147,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01f609e57b117bc48afce6bb53ce024a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 40c94091b4d83274c98c4a11ee2c0eef, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
