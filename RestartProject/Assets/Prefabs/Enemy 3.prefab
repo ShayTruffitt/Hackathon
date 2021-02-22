@@ -33720,8 +33720,8 @@ MonoBehaviour:
   Health: 100
   playerToFollow: {fileID: 0}
   moveSpeed: 3
-  stoppingDistance: 6
-  retreatDistance: 4
+  stoppingDistance: 8
+  retreatDistance: 6
   enemyShip: {fileID: 7217261794928851257}
   damageAnimation: {fileID: 3195150556323735885, guid: dc8244ad7bc762d4a85361dfa681216b,
     type: 3}
