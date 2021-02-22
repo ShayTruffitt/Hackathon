@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         if (Health <= 0)
         {
 
-            Destroy(Ship);
+            Destroy(enemyShip);
             GameObject e = Instantiate(damageAnimation) as GameObject;
             e.transform.position = transform.position;
             Destroy(this.gameObject);
@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
 
     private void RotateTowards(Vector2 target)
     {
-        var offset = 180f;
+        var offset = 270f;
         Vector2 direction = target - (Vector2)transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
