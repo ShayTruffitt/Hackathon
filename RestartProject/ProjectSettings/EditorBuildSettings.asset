@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shay.unity
     guid: df788cef06a194f4faebef032db80189
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 713cd513a679ebe40b42419c05dd11a2
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 49b961a38622fd744805c75f37ce1065
   m_configObjects: {}

@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesInRoom;
     public bool spawnerDone;
     public GameObject spawnerDoneGameObject;
+    
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
         }
         }
     }
-
+    
     void SpawnEnemy()
     {
         index = Random.Range(0, spawnPoints.Length);
