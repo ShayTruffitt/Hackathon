@@ -62,9 +62,7 @@ public class Enemy : MonoBehaviour
         }
 
 
-        enemySpawner = FindObjectOfType<EnemySpawner>();
-        enemySpawner.enemiesInRoom--;
-
+        
     }
 
     private void FixedUpdate()
@@ -81,10 +79,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-        if (enemySpawner.spawnTime <= 0 && enemySpawner.enemiesInRoom <= 0)
-        {
-            enemySpawner.spawnerDone = true;
-        }
+       
 
         Health -= damage;
         if (Health <= 0)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
             GameObject e = Instantiate(deathAnimation) as GameObject;
             e.transform.position = transform.position;
             GameManager.instance.playerAlive = false;
+            SceneManager.LoadScene(sceneBuildIndex:2);
         }
 
     }

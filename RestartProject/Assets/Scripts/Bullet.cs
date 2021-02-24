@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         }
 
         
-        if(other.tag== "Enemy")
+        if(other.CompareTag("Environment"))
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;

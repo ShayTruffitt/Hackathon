@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 using TMPro;
 
@@ -36,6 +38,13 @@ public class GameManager : MonoBehaviour
         //This functionality is added later
         if (scoreText != null)
             scoreText.text = "" + (int)score;
+
+        
+            if (score >= 1000)
+            {
+                SceneManager.LoadScene(sceneBuildIndex: 3);
+            }
+        
     }
 
     void OnDisable()
@@ -79,7 +88,9 @@ public class GameManager : MonoBehaviour
         GetSavedScore();
     }
 
+    
 
+    
 
 
 }
