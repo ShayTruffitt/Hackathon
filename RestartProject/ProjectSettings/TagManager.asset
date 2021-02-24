@@ -59,3 +59,18 @@ TagManager:
   - name: ScreenEffects
     uniqueID: 2499877629
     locked: 0
+  - name: Health20
+    uniqueID: 3966654191
+    locked: 0
+  - name: Health40
+    uniqueID: 297470317
+    locked: 0
+  - name: Health60
+    uniqueID: 611928645
+    locked: 0
+  - name: Health80
+    uniqueID: 812099431
+    locked: 0
+  - name: Healthfull
+    uniqueID: 3395116485
+    locked: 0
